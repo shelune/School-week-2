@@ -9,7 +9,11 @@ app.use('/', express.static(__dirname + '/public'));
 
 app.set('port', process.env.PORT || 9090);
 
-mongoose.connect('mongodb://localhost:27017/test').then(() => {
+mongoose.connect({
+	host: process.env.DB_HOST,
+	username: process.env.DB_USER,
+	password: process.env.DB_PASS
+}).then(() => {
 	console.log('Connected?');
 	var server = app.listen(app.get('port'), function() {
 	  console.log('Express server listening on port ' + server.address().port);
