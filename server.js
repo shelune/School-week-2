@@ -9,14 +9,10 @@ app.use('/', express.static(__dirname + '/public'));
 
 app.set('port', process.env.PORT || 9090);
 
-mongoose.connect({
-	host: process.env.DB_HOST,
-	username: process.env.DB_USER,
-	password: process.env.DB_PASS
-}).then(() => {
+mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}:${process.env.DB_PORT}/cats`).then(() => {
 	console.log('Connected?');
-	var server = app.listen(app.get('port'), function() {
-	  console.log('Express server listening on port ' + server.address().port);
+	const server = app.listen(process.env.APP_PORT, function() {
+	  console.log('Express server listening on port ' + process.env.APP_PORT);
 	});
 
 	const Schema = mongoose.Schema;
