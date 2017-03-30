@@ -1,0 +1,58 @@
+.display {
+	padding: 20px;
+	flex-wrap: wrap;
+}
+
+.display-list {
+	text-align: center;
+}
+
+.display-list li {
+	display: inline-block;
+	color: #e32636;
+	margin: 0 10px;
+	cursor: pointer;
+}
+
+.info.info {
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin: 5px;
+	width: 30%;
+}
+
+.info-heading {
+	display: block;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.info-modal {
+	display: block;
+}
+
+.modal-content {
+	overflow: visible;
+}
+
+.modal-heading {
+	color: #fafafa;
+}
+
+.modal-mapContainer {
+	position: absolute;
+	bottom: 0;
+	right: -50%;
+	height: 300px;
+	width: 50%;
+}
+
+.modal-map {
+	min-height: 300px;
+}
+
+/* UPLOAD */
+
+.field-upload {
+	padding-left: 100px;
+}
